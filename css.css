@@ -1,0 +1,273 @@
+html {
+  font-family: courier, arial, helvetica;
+  height: 100%;
+}
+
+body {
+  background: -moz-linear-gradient(top, #006699 0%, #217AA6 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#006699), to(#217AA6));
+  background: -webkit-linear-gradient(top, #006699 0%, #217AA6 100%);
+  background: -o-linear-gradient(top, #006699 0%, #217AA6 100%);
+  background: -ms-linear-gradient(top, #006699 0%, #217AA6 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+  background-color: gray;
+  display: grid;
+  grid-template-areas:
+    "header headertitle"
+    "ime imeinput"
+    "prezime prezimeinput"
+    "vrsta vrstainput"
+    "submit submit";
+  grid-template-columns: 25% auto;
+  grid-template-rows: 20% auto auto auto 20%;
+  height: 60%;
+  left: 20%;
+  position: relative;
+  top: 20%;
+  width: 60%;
+}
+
+.logo {
+  grid-area: header;
+  height: 75px;
+  margin: auto;
+}
+
+.logo:hover {
+  animation: spin 5s infinite;
+  -webkit-animation: spin 5s infinite;
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotateY(0deg);
+  }
+
+  to {
+    -webkit-transform: rotateY(-360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+
+  to {
+    -moz-transform: rotateY(-360deg);
+    -ms-transform: rotateY(-360deg);
+    transform: rotateY(-360deg);
+  }
+}
+
+.titlebanner {
+  grid-area: headertitle;
+  margin: auto;
+}
+
+form {
+  display: contents;
+}
+
+.ime {
+  grid-area: ime;
+  margin: auto;
+}
+
+
+.imeinput {
+  grid-area: imeinput;
+  margin: auto;
+}
+
+.prezime {
+  grid-area: prezime;
+  margin: auto;
+}
+
+.prezimeinput {
+  grid-area: prezimeinput;
+  margin: auto;
+}
+
+.vrsta {
+  grid-area: vrsta;
+  margin: auto;
+}
+
+.vrstainput {
+  grid-area: vrstainput;
+  margin: auto;
+}
+
+
+.btn, .bg, .around {
+  grid-area: submit;
+  width: 100px;
+	height: 100px;
+    border: none;
+    color: inherit;
+    background: none;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 300;
+    outline: none;
+    position: absolute;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.btn img{
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.btn:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.bg {
+    height: 32px;
+    width: 32px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.btn-boarder {
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+
+.animation {
+  animation: fadeOut 0.4s ease-out;
+  animation-delay: 0.4s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  -webkit-animation: fadeOut 0.4s ease-out;
+  -webkit-animation-delay: 0.4s;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation: fadeOut 0.4s ease-out;
+  -moz-animation-delay: 0.4s;
+  -moz-animation-fill-mode: forwards;
+    -moz-animation-iteration-count: 1;
+    -webkit-transform: translate(100px, -100px);
+    -moz-transform: translate(100px, -100px);
+    -o-transform: translate(100px, -100px);
+    -ms-transform: translate(100px, -100px);
+    transform: translate(100px, -100px);
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+
+.animation2 {
+  animation: fadeIn 0.4s ease-out;
+  animation-delay: 0.4s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  -webkit-animation: fadeIn 0.4s ease-out;
+  -webkit-animation-delay: 0.4s;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation: fadeIn 0.4s ease-out;
+  -moz-animation-delay: 0.4s;
+  -moz-animation-fill-mode: forwards;
+    -moz-animation-iteration-count: 1;
+}
+
+@-webkit-keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+.around {
+    width: 101px;
+    height: 101px;
+    border: none;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 300;
+    outline: none;
+    position: absolute;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.around:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+}
