@@ -31,7 +31,7 @@
 
   <div class="container">
 
-    <a href="#" class="logo"><img src="capture.png" class="logo"></a>
+    <a href="index.php" class="logo"><img src="capture.png" class="logo"></a>
     <h2 class="titlebanner">Zakup vozila voznog parka ZDK</h2>
 
     <form action="result.php" method="post" id="Form">
