@@ -50,6 +50,16 @@ $resultvozaclease = $conn->query($vozaclease);
         }
       }
 
+#NEMA AUTOMOBILA case
+
+      $nocar = "SELECT VIN, Brand, Model, Type, Lease FROM automobili WHERE Type = '$vrsta' AND Lease IS NULL";
+      $test = $conn->query($nocar);
+        if ($test->num_rows > 0) {}
+          else{
+            global $carempty;
+          $carempty = 1;
+        }
+
     #MINISTARSTVO KORISNIKA
         $korisnik = "SELECT Ime, Prezime, Ministarstvo FROM uposlenici WHERE Ime = '$ime' AND Prezime = '$prezime'";
         $ministarstvo = $conn->query($korisnik);
@@ -57,30 +67,51 @@ $resultvozaclease = $conn->query($vozaclease);
 
             while($row1 = $ministarstvo->fetch_assoc()) {
               #BIRANJE VOZAČA
-              $vozac = "SELECT Ime, Prezime, Ministarstvo, Telefon FROM vozaci WHERE Ministarstvo = '$row1[Ministarstvo]' order by RAND() LIMIT 1";
+              $vozac = "SELECT Ime, Prezime, Ministarstvo, Telefon, Lease FROM vozaci WHERE Ministarstvo = '$row1[Ministarstvo]' AND Lease IS NULL order by RAND() LIMIT 1";
               $result2 = $conn->query($vozac);
               if ($result2->num_rows > 0) {
                   while($row3 = $result2->fetch_assoc()) {
+                    global $carempty;
+                    if($carempty == 1){
+                      $imevozaca = "Nema slobodnog vozača";
+                      $prezimevozaca = "Nema slobodnog vozača";
+                      $telefonvozaca = "Nema slobodnog vozača";
+                    }
+                    else{
                         global $imevozaca, $prezimevozaca, $telefonvozaca;
                         $imevozaca = $row3["Ime"];
                         $prezimevozaca = $row3["Prezime"];
                         $telefonvozaca = $row3["Telefon"];
-                        }
+                      }
+                    }
+                  }
+                  else{
+                    $imevozaca = "Nema slobodnog vozača";
+                    $prezimevozaca = "Nema slobodnog vozača";
+                    $telefonvozaca = "Nema slobodnog vozača";
                   }
                 }
               }
 
       #BIRANJE AUTOMOBILA
-      $automobil = "SELECT VIN, Brand, Model, Type FROM automobili WHERE Type = '$vrsta' order by RAND() LIMIT 1";
+      $automobil = "SELECT VIN, Brand, Model, Type, Lease FROM automobili WHERE Type = '$vrsta' AND Lease IS NULL order by RAND() LIMIT 1";
       $result = $conn->query($automobil);
         if ($result->num_rows > 0) {
             while($row2 = $result->fetch_assoc()) {
                 global $carvin, $carname;
+                if($imevozaca == "Nema slobodnog vozača"){
+                  $carvin = "Nema slobodnog automobila";
+                  $carname = "Nema slobodnog automobila";
+                }else{
                 $carvin =  $row2["VIN"];
                 $carname =  $row2["Brand"]. " " . $row2["Model"];
               }
+              }
             }
-
+            else{
+              $carvin = "Nema slobodnog automobila";
+              $carname = "Nema slobodnog automobila";
+            }
 
   ?>
 <html>
