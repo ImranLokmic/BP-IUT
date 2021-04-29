@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 28, 2021 at 04:53 PM
+-- Generation Time: Apr 29, 2021 at 09:51 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 7.3.27
 
@@ -32,58 +32,61 @@ CREATE TABLE `automobili` (
   `Brand` varchar(255) NOT NULL,
   `Model` varchar(255) NOT NULL,
   `Year` int(11) NOT NULL,
-  `Type` varchar(255) NOT NULL
+  `Type` varchar(255) NOT NULL,
+  `Lease` tinyint(1) DEFAULT NULL,
+  `LeaseDate` timestamp NULL DEFAULT NULL,
+  `LeaseAmount` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `automobili`
 --
 
-INSERT INTO `automobili` (`VIN`, `Brand`, `Model`, `Year`, `Type`) VALUES
-('19XFA1F54AE028487', 'Hyundai', 'Palisade', 2020, 'SUV'),
-('1B7GG2AZX1S231691', 'Mercedes', 'GLC63', 2020, 'SUV'),
-('1C4BJWDG5DL645652', 'Mazda', 'CX-30', 2021, 'SUV'),
-('1FDWF30RX9EA83022', 'Mercedes', 'A-Class', 2021, 'Town Car'),
-('1FTSW21P07EA58444', 'BMW', 'X2', 2021, 'SUV'),
-('1G1AK55F367777693', 'Volkswagen', 'Jetta GLI', 2021, 'Town Car'),
-('1G1ND52J83M647538', 'Mercedes', 'C-Class', 2021, 'Town Car'),
-('1G1ZB5E05CF201006', 'Toyota', 'RAV4', 2020, 'SUV'),
-('1G2WR1219YF111719', 'Hyundai', 'Kona', 2020, 'SUV'),
-('1G4CU541024231523', 'BMW', 'X2', 2021, 'SUV'),
-('1G4CW54K054104438', 'Hyundai', 'Accent', 2021, 'Town Car'),
-('1GCEC19X38Z103178', 'Mercedes', 'GLC43', 2020, 'SUV'),
-('1GNCT18Z2L0187489', 'Hyundai', 'Accent', 2021, 'Town Car'),
-('1GTHG35K181195400', 'BMW', 'X2', 2021, 'SUV'),
-('1HGCR2F88FA080616', 'Mercedes', 'C-Class', 2021, 'Town Car'),
-('1LNHM81W56Y667127', 'Volkswagen', 'Atlas', 2020, 'SUV'),
-('1N4AL11D13C282659', 'Hyundai', 'Kona', 2021, 'SUV'),
-('1N6AA0EJ3BN323481', 'BMW', 'X1', 2021, 'SUV'),
-('1XP5DB9X32N571881', 'Mercedes', 'A-Class', 2021, 'Town Car'),
-('1YVHP82H495M58943', 'Volvo', 'XC40', 2020, 'SUV'),
-('2C3KA43R18H248566', 'Volkswagen', 'Jetta GLI', 2021, 'Town Car'),
-('2G2FS22K7T2273782', 'BMW', '3-Series', 2021, 'Town Car'),
-('2G4WB52K3T1409243', 'Kia', 'Rio', 2021, 'Town Car'),
-('2GCEC19T421245875', 'Mercedes', 'A-Class', 2021, 'Town Car'),
-('2T3BFREV2DW033731', 'Volkswagen', 'Tiguan', 2020, 'SUV'),
-('3C6JD6CT5CG111362', 'Volkswagen', 'Tiguan', 2021, 'SUV'),
-('3VW5X7AT0EM849999', 'Kia', 'Soul', 2021, 'SUV'),
-('4T4BF1FK9FR495680', 'Volkswagen', 'Jetta GLI', 2021, 'Town Car'),
-('4V4NC9TH45N304515', 'Volvo', 'XC40', 2021, 'SUV'),
-('5N1AR2MM9EC689119', 'Mercedes', 'A-Class', 2020, 'Town Car'),
-('5TBET38106S556335', 'Mercedes', 'CLA-Class', 2020, 'Town Car'),
-('5TENL42N73Z179543', 'Kia', 'Telluride', 2020, 'SUV'),
-('73VWSF31Y17M431481', 'Mercedes', 'CLA-Class', 2020, 'Town Car'),
-('8WBAVL1C53EVY94397', 'Mercedes', 'CLA-Class', 2021, 'Town Car'),
-('JA3AW86V28U044184', 'Volkswagen', 'Jetta GLI', 2021, 'Town Car'),
-('JA4LX41F65U041228', 'Hyundai', 'Kona', 2020, 'SUV'),
-('JN1AR5EF8EM248990', 'Mercedes', 'A-Class', 2021, 'Town Car'),
-('KM8JT3AF5FU092378', 'BMW', 'X1', 2021, 'SUV'),
-('WDCYC3HF5BX170234', 'Mercedes', 'A35', 2021, 'Town Car'),
-('WDDHF8HB9AA221796', 'BMW', '3-Series', 2021, 'Town Car'),
-('WMWZG3C59BTY84563', 'BMW', 'X1', 2020, 'SUV'),
-('WVWRH63B84P159667', 'Mercedes', 'A-Class', 2020, 'Town Car'),
-('YV140MEKXF1284754', 'BMW', 'X1', 2020, 'SUV'),
-('YV1KS9608V1191936', 'Volkswagen', 'Jetta GLI', 2021, 'Town Car');
+INSERT INTO `automobili` (`VIN`, `Brand`, `Model`, `Year`, `Type`, `Lease`, `LeaseDate`, `LeaseAmount`) VALUES
+('19XFA1F54AE028487', 'Hyundai', 'Palisade', 2020, 'SUV', NULL, NULL, NULL),
+('1B7GG2AZX1S231691', 'Mercedes', 'GLC63', 2020, 'SUV', NULL, NULL, NULL),
+('1C4BJWDG5DL645652', 'Mazda', 'CX-30', 2021, 'SUV', NULL, NULL, NULL),
+('1FDWF30RX9EA83022', 'Mercedes', 'A-Class', 2021, 'Town Car', NULL, NULL, NULL),
+('1FTSW21P07EA58444', 'BMW', 'X2', 2021, 'SUV', NULL, NULL, NULL),
+('1G1AK55F367777693', 'Volkswagen', 'Jetta GLI', 2021, 'Town Car', NULL, NULL, NULL),
+('1G1ND52J83M647538', 'Mercedes', 'C-Class', 2021, 'Town Car', NULL, NULL, NULL),
+('1G1ZB5E05CF201006', 'Toyota', 'RAV4', 2020, 'SUV', NULL, NULL, NULL),
+('1G2WR1219YF111719', 'Hyundai', 'Kona', 2020, 'SUV', NULL, NULL, NULL),
+('1G4CU541024231523', 'BMW', 'X2', 2021, 'SUV', NULL, NULL, NULL),
+('1G4CW54K054104438', 'Hyundai', 'Accent', 2021, 'Town Car', NULL, NULL, NULL),
+('1GCEC19X38Z103178', 'Mercedes', 'GLC43', 2020, 'SUV', NULL, NULL, NULL),
+('1GNCT18Z2L0187489', 'Hyundai', 'Accent', 2021, 'Town Car', NULL, NULL, NULL),
+('1GTHG35K181195400', 'BMW', 'X2', 2021, 'SUV', NULL, NULL, NULL),
+('1HGCR2F88FA080616', 'Mercedes', 'C-Class', 2021, 'Town Car', NULL, NULL, NULL),
+('1LNHM81W56Y667127', 'Volkswagen', 'Atlas', 2020, 'SUV', NULL, NULL, NULL),
+('1N4AL11D13C282659', 'Hyundai', 'Kona', 2021, 'SUV', NULL, NULL, NULL),
+('1N6AA0EJ3BN323481', 'BMW', 'X1', 2021, 'SUV', NULL, NULL, NULL),
+('1XP5DB9X32N571881', 'Mercedes', 'A-Class', 2021, 'Town Car', NULL, NULL, NULL),
+('1YVHP82H495M58943', 'Volvo', 'XC40', 2020, 'SUV', NULL, NULL, NULL),
+('2C3KA43R18H248566', 'Volkswagen', 'Jetta GLI', 2021, 'Town Car', NULL, NULL, NULL),
+('2G2FS22K7T2273782', 'BMW', '3-Series', 2021, 'Town Car', NULL, NULL, NULL),
+('2G4WB52K3T1409243', 'Kia', 'Rio', 2021, 'Town Car', NULL, NULL, NULL),
+('2GCEC19T421245875', 'Mercedes', 'A-Class', 2021, 'Town Car', NULL, NULL, NULL),
+('2T3BFREV2DW033731', 'Volkswagen', 'Tiguan', 2020, 'SUV', NULL, NULL, NULL),
+('3C6JD6CT5CG111362', 'Volkswagen', 'Tiguan', 2021, 'SUV', NULL, NULL, NULL),
+('3VW5X7AT0EM849999', 'Kia', 'Soul', 2021, 'SUV', NULL, NULL, NULL),
+('4T4BF1FK9FR495680', 'Volkswagen', 'Jetta GLI', 2021, 'Town Car', NULL, NULL, NULL),
+('4V4NC9TH45N304515', 'Volvo', 'XC40', 2021, 'SUV', NULL, NULL, NULL),
+('5N1AR2MM9EC689119', 'Mercedes', 'A-Class', 2020, 'Town Car', NULL, NULL, NULL),
+('5TBET38106S556335', 'Mercedes', 'CLA-Class', 2020, 'Town Car', NULL, NULL, NULL),
+('5TENL42N73Z179543', 'Kia', 'Telluride', 2020, 'SUV', NULL, NULL, NULL),
+('73VWSF31Y17M431481', 'Mercedes', 'CLA-Class', 2020, 'Town Car', NULL, NULL, NULL),
+('8WBAVL1C53EVY94397', 'Mercedes', 'CLA-Class', 2021, 'Town Car', NULL, NULL, NULL),
+('JA3AW86V28U044184', 'Volkswagen', 'Jetta GLI', 2021, 'Town Car', NULL, NULL, NULL),
+('JA4LX41F65U041228', 'Hyundai', 'Kona', 2020, 'SUV', NULL, NULL, NULL),
+('JN1AR5EF8EM248990', 'Mercedes', 'A-Class', 2021, 'Town Car', NULL, NULL, NULL),
+('KM8JT3AF5FU092378', 'BMW', 'X1', 2021, 'SUV', NULL, NULL, NULL),
+('WDCYC3HF5BX170234', 'Mercedes', 'A35', 2021, 'Town Car', NULL, NULL, NULL),
+('WDDHF8HB9AA221796', 'BMW', '3-Series', 2021, 'Town Car', NULL, NULL, NULL),
+('WMWZG3C59BTY84563', 'BMW', 'X1', 2020, 'SUV', NULL, NULL, NULL),
+('WVWRH63B84P159667', 'Mercedes', 'A-Class', 2020, 'Town Car', NULL, NULL, NULL),
+('YV140MEKXF1284754', 'BMW', 'X1', 2020, 'SUV', NULL, NULL, NULL),
+('YV1KS9608V1191936', 'Volkswagen', 'Jetta GLI', 2021, 'Town Car', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -217,44 +220,47 @@ CREATE TABLE `vozaci` (
   `Ministarstvo` varchar(255) NOT NULL,
   `Ime` varchar(255) NOT NULL,
   `Prezime` varchar(255) NOT NULL,
-  `telefon` varchar(255) NOT NULL
+  `telefon` varchar(255) NOT NULL,
+  `Lease` tinyint(1) DEFAULT NULL,
+  `LeaseDate` timestamp NULL DEFAULT NULL,
+  `LeaseAmount` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `vozaci`
 --
 
-INSERT INTO `vozaci` (`VOZID`, `Ministarstvo`, `Ime`, `Prezime`, `telefon`) VALUES
-(1, 'Ministarstvo Finansija', 'Sead', 'Mujić', '+38762458946'),
-(2, 'Ministarstvo Finansija', 'Muhamed', 'Begović', '+38761236742'),
-(3, 'Ministarstvo Finansija', 'Omer', 'Tahirović', '+38761255612'),
-(4, 'Ministarstvo unutrašnjih poslova', 'Amel', 'Smajić', '+38761648313'),
-(5, 'Ministarstvo unutrašnjih poslova', 'Haris', 'Spahić', '+38761568423'),
-(6, 'Ministarstvo unutrašnjih poslova', 'Abdulah', 'Agić', '+38761568133'),
-(7, 'Ministarstvo za boračka pitanja', 'Ivan', 'Mandić', '+38761567478'),
-(8, 'Ministarstvo za boračka pitanja', 'Josip', 'Kovač', '+38761327143'),
-(9, 'Ministarstvo za boračka pitanja', 'Benjamin', 'Šabanović', '+38761312251'),
-(10, 'Ministarstvo za obrazovanje, nauku, kulturu i sport', 'Ejub', 'Tahirović', '+38761132123'),
-(11, 'Ministarstvo za obrazovanje, nauku, kulturu i sport', 'Rasim', 'Beganović', '+38761131233'),
-(12, 'Ministarstvo za obrazovanje, nauku, kulturu i sport', 'Petar', 'Mijatović', '+38761975133'),
-(13, 'Ministarstvo za poljoprivredu, šumarstvo i vodoprivredu', 'Ajdin', 'Majstorović', '+38761783133'),
-(14, 'Ministarstvo za poljoprivredu, šumarstvo i vodoprivredu', 'Jusuf', 'Šehović', '+38761682931'),
-(15, 'Ministarstvo za poljoprivredu, šumarstvo i vodoprivredu', 'Ismet', 'Lukić', '+38762513211'),
-(16, 'Ministarstvo za pravosuđe i upravu', 'Lejla', 'Zahirović', '+38763512131'),
-(17, 'Ministarstvo za pravosuđe i upravu', 'Vildana', 'Bijedić', '+38763143571'),
-(18, 'Ministarstvo za privredu', 'Enesa', 'Sokolović', '+38762312651'),
-(19, 'Ministarstvo za pravosuđe i upravu', 'Amra', 'Vidović', '+38763312571'),
-(20, 'Ministarstvo za privredu', 'Esma', 'Husić', '+38762784981'),
-(21, 'Ministarstvo za privredu', 'Suada', 'Sokolović', '+38762621251'),
-(22, 'Ministarstvo za prostorno uređenje, promet i komunikacije i zaštitu okoline', 'Lamija', 'Čengić', '+38762731312'),
-(23, 'Ministarstvo za prostorno uređenje, promet i komunikacije i zaštitu okoline', 'Ajla', 'Jahić', '+38762782122'),
-(24, 'Ministarstvo za prostorno uređenje, promet i komunikacije i zaštitu okoline', 'Emina', 'Bičakčić', '+38762951371'),
-(25, 'Ministarstvo za rad, socijalnu politiku i izbjeglice', 'Almedina', 'Salihović', '+38762315321'),
-(26, 'Ministarstvo za rad, socijalnu politiku i izbjeglice', 'Amra', 'Čengić', '+38764561231'),
-(27, 'Ministarstvo za rad, socijalnu politiku i izbjeglice', 'Meliha', 'Jašarspahić', '+38764742111'),
-(28, 'Ministarstvo zdravstva', 'Lejla', 'Kapetanović', '+38764734123'),
-(29, 'Ministarstvo zdravstva', 'Azra', 'Šehić', '+38764326663'),
-(30, 'Ministarstvo zdravstva', 'Ajna', 'Muslić', '+38764353663');
+INSERT INTO `vozaci` (`VOZID`, `Ministarstvo`, `Ime`, `Prezime`, `telefon`, `Lease`, `LeaseDate`, `LeaseAmount`) VALUES
+(1, 'Ministarstvo Finansija', 'Sead', 'Mujić', '+38762458946', NULL, NULL, NULL),
+(2, 'Ministarstvo Finansija', 'Muhamed', 'Begović', '+38761236742', NULL, NULL, NULL),
+(3, 'Ministarstvo Finansija', 'Omer', 'Tahirović', '+38761255612', NULL, NULL, NULL),
+(4, 'Ministarstvo unutrašnjih poslova', 'Amel', 'Smajić', '+38761648313', NULL, NULL, NULL),
+(5, 'Ministarstvo unutrašnjih poslova', 'Haris', 'Spahić', '+38761568423', NULL, NULL, NULL),
+(6, 'Ministarstvo unutrašnjih poslova', 'Abdulah', 'Agić', '+38761568133', NULL, NULL, NULL),
+(7, 'Ministarstvo za boračka pitanja', 'Ivan', 'Mandić', '+38761567478', NULL, NULL, NULL),
+(8, 'Ministarstvo za boračka pitanja', 'Josip', 'Kovač', '+38761327143', NULL, NULL, NULL),
+(9, 'Ministarstvo za boračka pitanja', 'Benjamin', 'Šabanović', '+38761312251', NULL, NULL, NULL),
+(10, 'Ministarstvo za obrazovanje, nauku, kulturu i sport', 'Ejub', 'Tahirović', '+38761132123', NULL, NULL, NULL),
+(11, 'Ministarstvo za obrazovanje, nauku, kulturu i sport', 'Rasim', 'Beganović', '+38761131233', NULL, NULL, NULL),
+(12, 'Ministarstvo za obrazovanje, nauku, kulturu i sport', 'Petar', 'Mijatović', '+38761975133', NULL, NULL, NULL),
+(13, 'Ministarstvo za poljoprivredu, šumarstvo i vodoprivredu', 'Ajdin', 'Majstorović', '+38761783133', NULL, NULL, NULL),
+(14, 'Ministarstvo za poljoprivredu, šumarstvo i vodoprivredu', 'Jusuf', 'Šehović', '+38761682931', NULL, NULL, NULL),
+(15, 'Ministarstvo za poljoprivredu, šumarstvo i vodoprivredu', 'Ismet', 'Lukić', '+38762513211', NULL, NULL, NULL),
+(16, 'Ministarstvo za pravosuđe i upravu', 'Lejla', 'Zahirović', '+38763512131', NULL, NULL, NULL),
+(17, 'Ministarstvo za pravosuđe i upravu', 'Vildana', 'Bijedić', '+38763143571', NULL, NULL, NULL),
+(18, 'Ministarstvo za privredu', 'Enesa', 'Sokolović', '+38762312651', NULL, NULL, NULL),
+(19, 'Ministarstvo za pravosuđe i upravu', 'Amra', 'Vidović', '+38763312571', NULL, NULL, NULL),
+(20, 'Ministarstvo za privredu', 'Esma', 'Husić', '+38762784981', NULL, NULL, NULL),
+(21, 'Ministarstvo za privredu', 'Suada', 'Sokolović', '+38762621251', NULL, NULL, NULL),
+(22, 'Ministarstvo za prostorno uređenje, promet i komunikacije i zaštitu okoline', 'Lamija', 'Čengić', '+38762731312', NULL, NULL, NULL),
+(23, 'Ministarstvo za prostorno uređenje, promet i komunikacije i zaštitu okoline', 'Ajla', 'Jahić', '+38762782122', NULL, NULL, NULL),
+(24, 'Ministarstvo za prostorno uređenje, promet i komunikacije i zaštitu okoline', 'Emina', 'Bičakčić', '+38762951371', NULL, NULL, NULL),
+(25, 'Ministarstvo za rad, socijalnu politiku i izbjeglice', 'Almedina', 'Salihović', '+38762315321', NULL, NULL, NULL),
+(26, 'Ministarstvo za rad, socijalnu politiku i izbjeglice', 'Amra', 'Čengić', '+38764561231', NULL, NULL, NULL),
+(27, 'Ministarstvo za rad, socijalnu politiku i izbjeglice', 'Meliha', 'Jašarspahić', '+38764742111', NULL, NULL, NULL),
+(28, 'Ministarstvo zdravstva', 'Lejla', 'Kapetanović', '+38764734123', NULL, NULL, NULL),
+(29, 'Ministarstvo zdravstva', 'Azra', 'Šehić', '+38764326663', NULL, NULL, NULL),
+(30, 'Ministarstvo zdravstva', 'Ajna', 'Muslić', '+38764353663', NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
